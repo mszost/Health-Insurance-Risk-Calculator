@@ -1,9 +1,7 @@
 label {
-    color: #9854d8;
-    font-size: larger;
+    font-size: 22px;
 }
 
-body {
-    background-color: rgb(57, 57, 57);
-    color: white;
+input {
+    font-size: 18px
 }
