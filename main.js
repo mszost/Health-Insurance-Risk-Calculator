@@ -4,7 +4,6 @@ const questions = ['age', 'bp', 'hist']
 var userAnswerIDs = [];
 var riskScoresArray = [];
 var totalRiskScore = 0;
-document.getElementById("summaryButton").disabled = true;
 
 function insertLinebreak(element) {
     element.appendChild(document.createElement("br"));
@@ -37,42 +36,33 @@ function getRiskScore() {
         totalRiskScore += parseInt(riskScoresArray[i]);
     }
 
-    // debugging
-    console.log('userAnswerIDs: ' + userAnswerIDs);
-    console.log('riskScoresArray: ' + riskScoresArray);
-    console.log('total score: ' + totalRiskScore);
-
-    // summary
+    // scoring
     if (totalRiskScore <= 20) {
-        statusEl.innerHTML = "Score = " + totalRiskScore + " (low risk)";
+        statusEl.innerHTML = "Total score = " + totalRiskScore + " (low risk category)";
     } 
     else if (totalRiskScore <= 50) {
-        statusEl.innerHTML = "Score = " + totalRiskScore + " (moderate risk)";
+        statusEl.innerHTML = "Total score = " + totalRiskScore + " (moderate risk category)";
     } 
     else if (totalRiskScore <= 75) {
-        statusEl.innerHTML = "Score = " + totalRiskScore + " (high risk)";
+        statusEl.innerHTML = "Total score = " + totalRiskScore + " (high risk category)";
     } 
     else {
-        statusEl.innerHTML = "Score = " + totalRiskScore + " (uninsurable)";
+        statusEl.innerHTML = "Total score = " + totalRiskScore + " (uninsurable)";
     }
 
-    //enable summary button after calculations
     document.getElementById("summaryButton").disabled = false;
-    
+    summaryEl.innerHTML = '';
 }
-//      BMI:     normal=0     overweight=30      obese/else=75
-//      BMI = kg / m^2
-//      weight / height^2
 
 function showSummary() {
     summaryEl.innerHTML = 'Detailed Summary:';
     insertLinebreak(summaryEl);
 
     for (var i = 0; i < userAnswerIDs.length; i++) {
-        console.log(document.getElementById(userAnswerIDs[i]).id);
         summaryEl.innerHTML += document.getElementById(userAnswerIDs[i]).id + ' (+ ' + riskScoresArray[i] + ' points)';
         insertLinebreak(summaryEl);
     }
+
     document.getElementById("summaryButton").disabled = true;
 }
 
@@ -96,13 +86,6 @@ function reset() {
 
 }
 
-/*
-for (var i = 0; i < questions.length; i++) {
-    for (var n = 0; n < document.getElementsByName(questions[i]).length; n++) {
-        if (document.getElementsByName(questions[i])[n].checked) {
-            document.getElementsByName(questions[i])[n].checked = false;
-
-        }
-    }
-} 
-*/
+//      BMI:     normal=0     overweight=30      obese/else=75
+//      BMI = kg / m^2
+//      weight / height^2

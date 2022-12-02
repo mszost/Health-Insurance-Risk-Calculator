@@ -26,19 +26,21 @@
         <input type="radio" name="bp" id="Stage 2 hypertension" value="75">Hypertension (stage 2)</input><br>
         <input type="radio" name="bp" id="Hypertensive crisis" value="100">Hypertensive Crisis</input><br><br>
 
-    <label>Check any of the following that the patient's family has a history of</label><br>
+    <label>Check any of the following that the client's family has a history of</label><br>
         <input type="checkbox" name="hist" id="Family history of diabetes" value="10">Diabetes</input><br>
         <input type="checkbox" name="hist" id="Family history of cancer" value="10">Cancer</input><br>
         <input type="checkbox" name="hist" id="Family history of Alzheimer's" value="10">Alzheimer's</input><br><br>
 
-    <label>Total Score and Risk Category</label>
+    <hr>    
+    <label style="font-size: 20px;">Total Score and Risk Category</label>
 
     <br><br>
 
     <button onclick="getRiskScore()">Calculate Risk Score</button><br><br>
-    <button id='summaryButton' onclick="showSummary()">Show Detailed Summary</button><br><br>
+    <button id='summaryButton' onclick="showSummary()" disabled>Show Detailed Summary</button><br><br>
     <button onclick="reset()">Reset</button>
 
+    
     <p id="status"></p>
     <p id="summary"></p>
 

@@ -5,3 +5,7 @@ label {
 input {
     font-size: 18px
 }
+
+p {
+    font-style: normal;
+}
