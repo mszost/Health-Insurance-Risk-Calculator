@@ -1,3 +1,7 @@
+body {
+    transition: 0.2s;
+}
+
 label {
     font-size: 22px;
 }
@@ -6,6 +10,21 @@ input {
     font-size: 18px
 }
 
-p {
-    font-style: normal;
+::placeholder {
+    font-size: 14px;
+}
+
+.row {
+    display: flex;
+}
+  
+  /* Create two equal columns that sits next to each other */
+.column {
+    flex: 50%;
+    padding: 10px;
+}
+
+#verify {
+    color: red;
+    font-weight: bold;
 }

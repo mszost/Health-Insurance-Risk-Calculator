@@ -8,15 +8,22 @@
 </head>
 <body>
 
-    <label>Age</label><div>
+    <h1>Health Insurance Risk Calculator</h1><hr>
+
+    <label>Age</label><br>
         <input type="radio" name="age" id="Under 30 years old" value="0">Under 30</input><br>
         <input type="radio" name="age" id="Under 45 years old" value="10">30 - 44</input><br>
         <input type="radio" name="age" id="Under 60 years old" value="20">45 - 60</input><br>
         <input type="radio" name="age" id="Over 60 years old" value="30">Over 60</input><br><br>
 
-    <label>BMI</label>
-<!-- Dont ask for BMI directly, calculate it w/ height weight ect-->
-    <br><br>
+    <label>Height</label><br>
+        <input type="text" id="feet" placeholder="Feet (3-7)"><br>
+        <input type="text" id="inches" placeholder="Inches (0-11)"><br><br>
+
+    <label>Weight</label><br>
+        <input type="text" id="weight" placeholder="pounds (50-700)"><br><br>
+
+    <br>
 
     <img src="assets/blood-pressure-categories.png" width=700px height=350px><br>
     <label>Use the image above to determine blood pressure category</label><br>
@@ -31,18 +38,22 @@
         <input type="checkbox" name="hist" id="Family history of cancer" value="10">Cancer</input><br>
         <input type="checkbox" name="hist" id="Family history of Alzheimer's" value="10">Alzheimer's</input><br><br>
 
-    <hr>    
-    <label style="font-size: 20px;">Total Score and Risk Category</label>
+    <hr>
+    <h2>Total Score and Risk Category</h2>
 
-    <br><br>
-
-    <button onclick="getRiskScore()">Calculate Risk Score</button><br><br>
-    <button id='summaryButton' onclick="showSummary()" disabled>Show Detailed Summary</button><br><br>
-    <button onclick="reset()">Reset</button>
-
-    
-    <p id="status"></p>
-    <p id="summary"></p>
+    <div class="row">
+        <div class="column" style="background-color:#aaa;">
+            <button onclick="getRiskScore()">Calculate Risk Score</button><br><br>
+            <button id='summaryButton' onclick="showSummary()" disabled>Show Detailed Summary</button><br><br>
+            <button onclick="reset()">Reset</button>
+        </div>
+        <div class="column" style="background-color:#bbb;">
+            <p id="verify"></p>
+            <p id="status"></p>
+            <i id="sect"></i>
+            <p id="summary"></p>
+        </div>
+    </div>
 
 </body>
 <script src="main.js"></script>
