@@ -21,7 +21,7 @@
         <input type="text" id="inches" placeholder="Inches (0-11)"><br><br>
 
     <label>Weight</label><br>
-        <input type="text" id="weight" placeholder="pounds (50-700)"><br><br>
+        <input type="text" id="weight" placeholder="Pounds (50-700)"><br><br>
 
     <br>
 
@@ -42,12 +42,12 @@
     <h2>Total Score and Risk Category</h2>
 
     <div class="row">
-        <div class="column" style="background-color:#aaa;">
+        <div class="column">
             <button onclick="getRiskScore()">Calculate Risk Score</button><br><br>
             <button id='summaryButton' onclick="showSummary()" disabled>Show Detailed Summary</button><br><br>
             <button onclick="reset()">Reset</button>
         </div>
-        <div class="column" style="background-color:#bbb;">
+        <div class="column">
             <p id="verify"></p>
             <p id="status"></p>
             <i id="sect"></i>
